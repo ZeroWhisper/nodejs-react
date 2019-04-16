@@ -1,0 +1,12 @@
+FROM node:10-alpine
+
+WORKDIR /usr/<PROJECT_NAME>
+COPY package.json yarn.lock ./
+
+RUN yarn
+
+COPY . .
+
+<DOCKER COMPOSE DESCARTA AS DUAS PROXIMAS LINHAS>
+EXPOSE 3000
+CMD ["yarn", "start"]
